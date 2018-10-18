@@ -230,8 +230,6 @@ class WorkSheetParser(object):
     def parse_merge(self, element):
         merged = MergeCells.from_tree(element)
         self.ws.merged_cells.ranges = merged.mergeCell
-        for cr in merged.mergeCell:
-            self.ws._clean_merge_range(cr)
 
 
     def parse_column_dimensions(self, col):
